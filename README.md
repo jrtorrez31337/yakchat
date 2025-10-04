@@ -21,6 +21,7 @@ Provide an ergonomic, batteries-included REPL for OpenAI-compatible /v1 endpoint
   - 🧠 Relevant Memory
   - 🧾 Conversation Summary
   - ✍️ Output Style
+
 - **Adaptive compaction**: summarize older turns into a concise brief that’s re-injected into
   the system block (not as a low-weight assistant message).
 - **Tokenizer-aware budgeting**: prefers HF tokenizer for Qwen (falls back to tiktoken, then heuristic)
@@ -42,16 +43,17 @@ Provide an ergonomic, batteries-included REPL for OpenAI-compatible /v1 endpoint
 ## Getting Started
 
 1) Configure your endpoint (example):
-export OPENAI_API_BASE="http://yak:8000/v1"
-export OPENAI_API_KEY="sk-local-123"
-export OPENAI_MODEL="Qwen/Qwen2.5-7B-Instruct"
+- export OPENAI_API_BASE="http://yak:8000/v1"
+- export OPENAI_API_KEY="sk-local-123"
+- export OPENAI_MODEL="Qwen/Qwen2.5-7B-Instruct"
 
 2) Run:
-python yc.py "What's the good word for the day?" # one time query
+
+- python yc.py "What's the good word for the day?" # one time query
 
 or interactive:
 
-python yc.py
+- python yc.py
 
 3) Explore `/help` for commands.
 
@@ -65,8 +67,8 @@ python yc.py
 
 ## Install
 WSL/Linux:
-git clone https://github.com/jrtorrez31337/yakchat.git
-cd yakchat
-python -m venv .yakchat && source .yakchat/bin/activate   # Windows: .yakchat\Scripts\activate
-pip install -r requirements.txt
-optional: pip install -e .   # enables the yakchat console command
+- git clone https://github.com/jrtorrez31337/yakchat.git
+- cd yakchat
+- python -m venv yakchat 
+- source .yakchat/bin/activate  
+- pip install -r requirements.txt
