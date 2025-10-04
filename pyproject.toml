@@ -1,0 +1,20 @@
+[project]
+name = "yakchat-context-client"
+version = "0.1.0"
+description = "A context-engineered, memory-aware client for OpenAI-compatible endpoints (vLLM), with single system message and adaptive compaction."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{ name = "Jon Torrez" }]
+dependencies = [
+    "requests>=2.31.0",
+    # optional tokenizers (the script gracefully falls back)
+    "transformers>=4.44.0; extra == 'hf'",
+    "tiktoken>=0.7.0; extra == 'tiktoken'",
+]
+
+[project.scripts]
+yc = "yc:__main__"
+
+[tool.setuptools]
+py-modules = ["yc"]
