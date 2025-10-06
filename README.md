@@ -7,6 +7,10 @@ Anthropic’s *Effective Context Engineering for AI Agents* (2025). It aims to m
 local models more reliable over long conversations by structuring prompts and managing
 context explicitly rather than hoping the model “just remembers.”
 
+## License
+
+Licensed under AGPLv3.
+
 ## Background
 
 Example work product.
@@ -53,9 +57,11 @@ Provide an ergonomic, batteries-included REPL for OpenAI-compatible /v1 endpoint
 
 1) Configure your endpoint (example):
 
+```bash
 export OPENAI_API_BASE="http://yak:8000/v1"
 export OPENAI_API_KEY="sk-local-123"
 export OPENAI_MODEL="Qwen/Qwen2.5-7B-Instruct"
+```
 
 2) Run:
 ```bash
