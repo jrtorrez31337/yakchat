@@ -1,14 +1,23 @@
-feat(cli): initial public release of yak-ctx-client 🐼 — context-engineered OpenAI-compatible REPL
+feat(cli): initial public release of yakchat 🐼 a commandline interface context-engineered OpenAI-compatible REPL
 
 ## Motivation
+
 This CLI client implements practical “effective context engineering” patterns inspired by
 Anthropic’s *Effective Context Engineering for AI Agents* (2025). It aims to make small,
 local models more reliable over long conversations by structuring prompts and managing
 context explicitly rather than hoping the model “just remembers.”
 
+## Background
+
+Example work product.
+
+I happen to have access to a few NVIDIA GPU A series cards and here we are.
+
 ## Purpose
+
 Provide an ergonomic, batteries-included REPL for OpenAI-compatible /v1 endpoints
-(e.g., vLLM) that:
+(e.g., vLLM et al) that:
+
 - Preserves conversation history on disk and exports transcripts
 - Compacts older turns into a durable, model-visible summary
 - Surfaces “relevant memory” (simple KV facts) inline
@@ -43,32 +52,36 @@ Provide an ergonomic, batteries-included REPL for OpenAI-compatible /v1 endpoint
 ## Getting Started
 
 1) Configure your endpoint (example):
-- export OPENAI_API_BASE="http://yak:8000/v1"
-- export OPENAI_API_KEY="sk-local-123"
-- export OPENAI_MODEL="Qwen/Qwen2.5-7B-Instruct"
+
+export OPENAI_API_BASE="http://yak:8000/v1"
+export OPENAI_API_KEY="sk-local-123"
+export OPENAI_MODEL="Qwen/Qwen2.5-7B-Instruct"
 
 2) Run:
-
-- python yc.py "What's the good word for the day?" # one time query
-
+```bash
+python yc.py "What's the good word for the day?" # one time query
+```
 or interactive:
-
-- python yc.py
-
-3) Explore `/help` for commands.
+```bash
+python yc.py
+```
+3) When in interactive mode, explore `/help` for commands.
 
 ## References
 - Anthropic, “Effective Context Engineering for AI Agents” (2025)
+- https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 
 ## Notes
 - Works well on Qwen2.5-7B-Instruct; larger variants (14B/32B) improve long-horizon fidelity.
 - The client is endpoint-agnostic as long as it speaks the OpenAI `/chat/completions` API.
 
-
 ## Install
+
 WSL/Linux:
-- git clone https://github.com/jrtorrez31337/yakchat.git
-- cd yakchat
-- python -m venv yakchat 
-- source .yakchat/bin/activate  
-- pip install -r requirements.txt
+```bash
+git clone https://github.com/jrtorrez31337/yakchat.git
+cd yakchat
+python -m venv yakchat 
+source yakchat/bin/activate  
+pip install -r requirements.txt
+```
